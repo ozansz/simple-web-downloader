@@ -4,6 +4,10 @@
 
 #define DEBUG 0
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 typedef enum {
   RETURN_SUCCESS = 0,
   GENERIC_ERROR = 1,
@@ -27,3 +31,7 @@ size_t
 WriteMemoryCallback(void *contents, size_t size, size_t nmemb, void *userp);
 
 int FastGet(const char *url, const char *user_agent, SimpleMemory *mem);
+
+#ifdef __cplusplus
+}
+#endif
